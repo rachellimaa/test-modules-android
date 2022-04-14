@@ -1,3 +1,3 @@
-# Macaw Android
+# Initial Structure in project with many modules
 
-Design System GFT
+Sample for multi modules in Android
