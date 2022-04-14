@@ -1,0 +1,18 @@
+import com.test.gradle.Depends
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+apply plugin: "kotlinx-serialization"
+apply from: "$rootDir/buildScripts/android-config.gradle"
+
+dependencies {
+
+    testImplementation(Depends.Kotlin.Test.junit)
+    testImplementation(Depends.Test.Mockk.core)
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+
+    implementation(project(':core'))
+
+}

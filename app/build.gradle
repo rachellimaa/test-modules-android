@@ -1,0 +1,38 @@
+import com.test.gradle.Depends
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "$rootDir/buildScripts/android-config.gradle"
+
+android {
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+
+        release {
+            proguardFiles getDefaultProguardFile("proguard-android.txt")
+            debuggable true
+            minifyEnabled true
+        }
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation(project(':core'))
+    implementation(project(':buttons'))
+
+    implementation(Depends.Android.appCompat)
+    implementation(Depends.Android.constraint)
+    implementation(Depends.Android.material)
+    implementation(Depends.Android.recyclerview)
+    implementation(Depends.Android.material)
+    implementation(Depends.Kotlin.kotlinReflect)
+}

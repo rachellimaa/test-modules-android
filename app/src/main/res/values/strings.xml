@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">test-modules-android</string>
+    <string name="str_button_test">Button Test</string>
+    <string name="str_buttons">Buttons</string>
+</resources>
